@@ -35,25 +35,36 @@ function canviDiners(){
 function crearTaula(){
     let columnes =prompt("Columnes ");
     let files =prompt("Files");
+    
+    //Creem l'element TABLE
+    let table=document.createElement("table");
+    //Creem el cos de la taula
+    let tblBody =document.createElement("tBody");
+    //Amb el .border especifico el tamany de la linea que separa les files i columnes
+    table.border=1;
 
-
-    var table=document.createElement("table");
-    var tblBody =document.createElement("tBody");
-
+    //Fem dos iteracions
     for (let i = 0; i < files; i++) {
-        var filesTaula = document.createElement("tr");
+        //La primera iteracció crea l'element fila i vegades
+        let filesTaula = document.createElement("tr");
         for(let x = 0; x < columnes; x++){
-            var columna = document.createElement("td");
-            var numeroCelda = document.createTextNode(
-                i+"."+x,
+            //La segona crea l'element columna x vegades
+            let columna = document.createElement("td");
+            //I emmagatzema el valors "cordenades que seran "i" i "x" " 
+            let cordenades = document.createTextNode(
+                (i+1)+"."+(x+1),
             )
-            columna.appendChild(numeroCelda);
+            //Despres afegim a a la columna el valor de cordenades    
+            columna.appendChild(cordenades);
+            //I afegim la columna a la taula
             filesTaula.appendChild(columna);
 
         }
+        //Per finalitzar afegim les files al cos de la taula
          tblBody.appendChild(filesTaula);
+         //I afegim el cos al element taula
          table.appendChild(tblBody);
-         tblBody.appendChild(table);
+         //Mostrem la taula al html
          document.body.appendChild(table);
 
 
