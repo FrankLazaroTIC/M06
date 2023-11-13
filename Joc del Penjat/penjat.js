@@ -1,7 +1,7 @@
 //Variables
-let victorias=0;
-let derrotas=0;
-let partidesJugades=0;
+let victorias = parseInt(localStorage.getItem('victorias')) || 0;
+let derrotas = parseInt(localStorage.getItem('derrotas')) || 0;
+let partidesJugades = parseInt(localStorage.getItem('partidesJugades')) || 0;
 
 //Funcio que comprova si l'usuari escriu una lletra
 function charCheck(lletra){
@@ -88,6 +88,9 @@ function iniciarJoc(){
     } else if (opcioUsuari == 3) {
       console.log("Has sortit del joc");
     }
+    localStorage.setItem('victorias', victorias);
+    localStorage.setItem('derrotas', derrotas);
+    localStorage.setItem('partidesJugades', partidesJugades);
 }
 
 
@@ -165,6 +168,9 @@ function novaPartida(){
       botoLletra.disabled = true;
     })
   }
+  localStorage.setItem('victorias', victorias);
+  localStorage.setItem('derrotas', derrotas);
+  localStorage.setItem('partidesJugades', partidesJugades);
 } 
 
 function estadistiques(){
@@ -180,4 +186,7 @@ function inici(){
   victorias=0;
   derrotas=0;
   partidesJugades=0;
+  localStorage.setItem('victorias', victorias);
+  localStorage.setItem('derrotas', derrotas);
+  localStorage.setItem('partidesJugades', partidesJugades);
 }
