@@ -159,8 +159,6 @@ function novaPartida(){
           alert("GAME OVER!! La paraula era: " + paraulaUsuari);
           derrotas++;
           
-          
-          
         }
       }
 
@@ -178,8 +176,8 @@ function estadistiques(){
     let finestra= window.open();
     //Escribim el contingut que volem a la nova finestra
     finestra.document.write("Partides jugades "+partidesJugades+"<br>");
-    finestra.document.write("Partides guanyades("+(victorias/partidesJugades)*100 +"):"+victorias+"<br>");
-    finestra.document.write("Partides guanyades("+(derrotas/partidesJugades)*100 +"):"+derrotas+"<br>");
+    finestra.document.write("Partides guanyades("+((victorias/partidesJugades)*100).toFixed(2) +"%):"+victorias+"<br>");
+    finestra.document.write("Partides perdudes("+((derrotas/partidesJugades)*100).toFixed(2) +"%):"+derrotas+"<br>");
 
 }
 function inici(){
